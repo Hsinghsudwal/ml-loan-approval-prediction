@@ -1,0 +1,61 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python main.py
+    deps:
+    - path: data
+      hash: md5
+      md5: 32c58b0f1d8cc3bc31e3fff5f7033eae.dir
+      size: 384337
+      nfiles: 1
+    - path: src/steps/data_ingestion.py
+      hash: md5
+      md5: 3577bfda1e54b8b2d65e1b3ac3196486
+      size: 1057
+    outs:
+    - path: output/raw
+      hash: md5
+      md5: d3ebaa109cbae1a5cb0cd374e420cd4b.dir
+      size: 384544
+      nfiles: 2
+  data_validation:
+    cmd: python main.py
+    deps:
+    - path: output/raw
+      hash: md5
+      md5: d3ebaa109cbae1a5cb0cd374e420cd4b.dir
+      size: 384544
+      nfiles: 2
+    - path: src/steps/data_validation.py
+      hash: md5
+      md5: 6d0f1f746f350a6764a5f14a2bd787ce
+      size: 1481
+    outs:
+    - path: output/validate
+      hash: md5
+      md5: b794e1b32dfbc1e12dc35af34981c7bf.dir
+      size: 590
+      nfiles: 1
+  data_transformation:
+    cmd: python main.py
+    deps:
+    - path: output/raw
+      hash: md5
+      md5: d3ebaa109cbae1a5cb0cd374e420cd4b.dir
+      size: 384544
+      nfiles: 2
+    - path: output/validate
+      hash: md5
+      md5: b794e1b32dfbc1e12dc35af34981c7bf.dir
+      size: 590
+      nfiles: 1
+    - path: src/steps/data_transformation.py
+      hash: md5
+      md5: e8c4a485fef1b73a2b9fe67d1de04331
+      size: 2437
+    outs:
+    - path: output/transformation
+      hash: md5
+      md5: f5b16c84c13103c3621b135bbe8120f6.dir
+      size: 189762
+      nfiles: 4

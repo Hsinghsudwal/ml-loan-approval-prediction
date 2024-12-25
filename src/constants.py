@@ -26,8 +26,16 @@ Y_TEST_PROCESS_DATA='y_test_process.csv'
 MODEL_LIST='model_list.csv'
 MODEL_FOLDER='model'
 BEST_MODEL_NAME='best_model.joblib'
-MODELS_FILE='model.csv'
+# MODELS_FILE='model.csv'
 
 # Model Evaluation
 EVALUATION_FOLDER='evaluate'
 EVAL_JSON_NAME='model_eval_metrics.json'
+CLASSI_REPORT= 'classification_report.csv'
+
+# Mlflow
+EXPERIMENT_NAME = 'predict_loan'
+MODEL_NAME = "best_model"
+ARCHIVED="Archived"
+STAGE = "Staging"
+PROD = "Production"

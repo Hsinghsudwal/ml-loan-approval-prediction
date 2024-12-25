@@ -1,0 +1,39 @@
+stages:
+  data_ingestion:
+    cmd: python main.py
+    deps:
+    - data
+    - src/steps/data_ingestion.py
+    outs:
+    - output/raw
+  data_validation:
+    cmd: python main.py
+    deps:
+    - output/raw
+    - src/steps/data_validation.py
+    outs:
+    - output/validate
+  data_transformation:
+    cmd: python main.py
+    deps:
+    - output/raw
+    - output/validate
+    - src/steps/data_transformation.py
+    outs:
+    - output/transformation
+  model_trainer:
+    cmd: python main.py
+    deps:
+    - output/transformation
+    - src/steps/data_transformation.py
+    - src/steps/model_trainer.py
+    outs:
+    - output/model
+  model_evaluation:
+    cmd: python main.py
+    deps:
+    - output/model
+    - src/steps/model_evaluation.py
+    - src/steps/model_trainer.py
+    outs:
+    - output/evaluate

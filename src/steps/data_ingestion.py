@@ -22,8 +22,8 @@ class DataIngestion:
             raw_data_path = os.path.join(OUTPUT,RAW_FOLDER)
             os.makedirs(raw_data_path,exist_ok=True)
             # save train test to csv
-            train_data.to_csv(os.path.join(raw_data_path,str(TRAIN_DATA_FILE)))
-            test_data.to_csv(os.path.join(raw_data_path,str(TEST_DATA_FILE)))
+            train_data.to_csv(os.path.join(raw_data_path,str(TRAIN_DATA_FILE)),index=False)
+            test_data.to_csv(os.path.join(raw_data_path,str(TEST_DATA_FILE)),index=False)
             print('Data Ingestion Completed')
             return train_data, test_data
 
