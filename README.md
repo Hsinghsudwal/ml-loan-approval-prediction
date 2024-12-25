@@ -2,7 +2,6 @@
 
 ## Table of Content
 - [Problem Statement](#problem-statement)
-- [Dataset](#dataset)
 - [Setup](#setup)
 - [Development](#development)
 - [Orchestration](#orchestration)
@@ -22,8 +21,7 @@ A loan application is used by borrowers to apply for a loan. Through the loan ap
 When it comes to banks, they have go through the loan applications to filter the people who can be granted with loan or not. In which they have to look after various factors such as cibil score, income, employment status, loan term, loan amount, assets value, and education which is time-consuming process. We wants to automate it and increase his bank’s efficiency. 
 
 **Objective**
-The idea is to build an Machine Learning model to predict whether the candidate’s profile is relevant or not using key features. Then create Flask application that the bank can use to classify if a user can be granted a loan or not. Deploy on docker container.
-
+The idea is to build an Machine Learning model to predict whether the candidate’s profile is relevant or not using key features. Then create Flask application that the bank can use to classify if a user can be granted a loan or not. Deploy on docker container. The loan-approval dataset is taken from kaggle [link.](https://www.kaggle.com/datasets/architsharma01/loan-approval-prediction-dataset)
 
 ## Setup
 **Installation: Clone the repository** `git clone https://github.com/Hsinghsudwal/ml-loan-approval-prediction.git`
