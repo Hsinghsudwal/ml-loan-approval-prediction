@@ -77,7 +77,7 @@ Optimize the model's hyperparameters to improve its performance. This can be don
 
    `jupyter nbconvert --to script notebook.ipynb`
 
-3. Edit script into modular code. To performe pipeline functions: which are located `src/steps- data_ingestion, data_validation, data_transformation,model_trainer, and model evaluation`. To run scripts from main project directory:  
+3. Edit script into modular code. To perform pipeline functions: which are located `src/steps- data_ingestion, data_validation, data_transformation,model_trainer, and model evaluation`. To run scripts from main project directory:  
    ```bash
    python main.py
    ```
@@ -135,7 +135,7 @@ Required:
     1. model needs to register with model mlflow registery.
     2. model needs to in `Staging` for testing.
     3. Script `test_pipe.py` will check if model is register and exists.
-    4. Load the model and perform basic score and compare to threshold if model needs retraining.
+    4. Load the register stage model, perform basic test score and compare to threshold if model needs retraining.
     5. Model stage to `Production`
 
 To see if retraining is required run scripts from main project directory:  
